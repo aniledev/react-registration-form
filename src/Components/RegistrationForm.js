@@ -11,6 +11,7 @@ export default class RegistrationForm extends Component {
     console.log("Password: ", password);
   }
 
+  // THIS IS AN UNCONTROLLED FORM BECAUSE THE STATE OF THE FORM IS NOT KEPT AND MAINTAINED IN THE REACT STATE; THE VALUES OF THE FORM ARE STORED IN THE DOM ITSELF
   render() {
     return (
       <div className="RegistrationForm">
