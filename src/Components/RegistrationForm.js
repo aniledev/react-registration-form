@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import ValidationError from "./ValidationError";
 
 export default class RegistrationForm extends Component {
   constructor(props) {
@@ -39,7 +40,7 @@ export default class RegistrationForm extends Component {
   }
   validatePassword() {
     const password = this.state.password.value.trim();
-    if ((password.length = 0)) {
+    if (password.length === 0) {
       return "Password is required.";
     }
     if (password.length < 6 || password.length > 72) {
@@ -85,6 +86,7 @@ export default class RegistrationForm extends Component {
               defaultValue="Frank"
               onChange={(e) => this.updateName(e.target.value)}
             />
+            <ValidationError message={this.validateName()} />
           </div>
           <div className="form-group">
             <label htmlFor="password">Password *</label>
@@ -95,6 +97,7 @@ export default class RegistrationForm extends Component {
               id="password"
               onChange={(e) => this.updatePassword(e.target.value)}
             />
+            <ValidationError message={this.validatePassword()} />
             <div className="registration__hint">
               6 to 72 characters, must include a number
             </div>
@@ -108,6 +111,7 @@ export default class RegistrationForm extends Component {
               id="repeatPassword"
               onChange={(e) => this.updateRepeatPassword(e.target.value)}
             />
+            <ValidationError message={this.validateRepeatPassword()} />
           </div>
 
           <div className="registration__button__group">
