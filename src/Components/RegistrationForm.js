@@ -74,6 +74,10 @@ export default class RegistrationForm extends Component {
 
   // THIS IS AN UNCONTROLLED FORM BECAUSE THE STATE OF THE FORM IS NOT KEPT AND MAINTAINED IN THE REACT STATE; THE VALUES OF THE FORM ARE STORED IN THE DOM ITSELF
   render() {
+    const nameError = this.validateName();
+    const passwordError = this.validatePassword();
+    const repeatPasswordError = this.validateRepeatPassword();
+
     return (
       <div className="RegistrationForm">
         <form className="registration" onSubmit={(e) => this.handleSubmit(e)}>
