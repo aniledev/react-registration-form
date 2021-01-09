@@ -1,10 +1,20 @@
 import React, { Component } from "react";
 
 export default class RegistrationForm extends Component {
+  //event handler to process submission of the form
+  handleSubmit(event) {
+    event.preventDefault();
+    // you can access the values in the form by using the event object
+    const name = event.target.name.value;
+    const password = event.target.password.value;
+    console.log("Name: ", name);
+    console.log("Password: ", password);
+  }
+
   render() {
     return (
       <div className="RegistrationForm">
-        <form className="registration">
+        <form className="registration" onSubmit={(e) => this.handleSubmit(e)}>
           <h2>Register</h2>
           <div className="registration__hint">* required field</div>
           <div className="form-group">
