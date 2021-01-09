@@ -24,6 +24,7 @@ export default class RegistrationForm extends Component {
               className="registration__control"
               name="name"
               id="name"
+              defaultValue="Frank"
             />
           </div>
           <div className="form-group">
